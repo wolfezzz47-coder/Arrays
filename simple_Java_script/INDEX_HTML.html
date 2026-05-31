@@ -3,10 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>I want to send requests</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+
+    <script>
+        //https://api.privatbank.ua/p24api/pubinfo?exchange&coursid=5
+        function handleClickButton() {
+            //console.log("clicked button clicked");
+            const urlServer = "https://21-kn.itstep.click/api/Genres/Search";
+            fetch(urlServer)
+                .then(async res =>
+                {
+                    const json = await res.json();
+                    console.log("server json = ", json);
+                });
+        }
+    </script>
 </head>
 <body>
 <main>
-    <h1>Hay everybody</h1>
+    <h1 class="text-3xl font-bold text-center">Hay everybody</h1>
+    <h2 class="text-2xl font-bolt">Global mission of JavaScript - touch the server</h2>
+    <button class="bg-orange-500 hover:bg-blue-700 text-white font-bold py-2 px-4 rounded"
+    onclick="handleClickButton()">
+        Відправити запит на сервер
+    </button>
+
 </main>
 
 </body>
